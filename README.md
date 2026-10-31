@@ -68,7 +68,7 @@ Catalogues above the real 3,678 items are synthetic: noisy copies of the real ve
 | 1,000,000 | IVF, 64 probes | 0.88 ms | 1.36 ms | 1.000 | 32 s |
 | 1,000,000 | HNSW, ef 512 | 1.65 ms | 2.88 ms | 0.782 | 242 s |
 
-At this catalogue size approximate search gains nothing, so the service uses exact search. At 100,000 items and above it's about 10 to 40 times faster. Don't generalise IVF beating HNSW at 1M: copies with small noise form tight clusters, which suit IVF and are hard for HNSW's graph, and this index searches by inner product rather than a true distance. Real embeddings could rank them differently.
+At this catalogue size approximate search gains nothing, so the service uses exact search. At 100,000 items and above IVF at matching recall is about 8 times faster at 100,000 and 40 times at 1M. Don't generalise IVF beating HNSW at 1M: copies with small noise form tight clusters, which suit IVF and are hard for HNSW's graph, and this index searches by inner product rather than a true distance. Real embeddings could rank them differently.
 
 ## Run it
 
