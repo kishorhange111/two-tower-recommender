@@ -17,6 +17,7 @@ from pathlib import Path
 
 import faiss
 import numpy as np
+import torch
 
 from .serving import load
 
@@ -103,6 +104,15 @@ def main() -> None:
     rng = np.random.default_rng(0)
     users = rng.choice(recommender.data.n_users, size=args.queries, replace=False)
     queries = np.concatenate([recommender._user_vector(int(u), []) for u in users])
+    torch.set_num_threads(1)
+    latencies = []
+    for user in recommender.data.user_ids[users]:
+        start = time.perf_counter()
+        recommender.recommend(int(user), k=10)
+        latencies.append((time.perf_counter() - start) * 1000)
+    # The whole request path on the real catalogue: user tower, exact search and filtering out seen items.
+    end_to_end = {"p50_ms": float(np.percentile(latencies, 50)), "p99_ms": float(np.percentile(latencies, 99))}
+    log(f"end to end on the real catalogue: {end_to_end}")
     results = []
     for size in args.sizes:
         vectors = recommender.item_vectors if size == 0 else scale_catalogue(recommender.item_vectors, size)
@@ -114,6 +124,7 @@ def main() -> None:
         "queries": args.queries,
         "real_catalogue": recommender.data.n_items,
         "synthetic_above_real": True,
+        "end_to_end_real_catalogue": end_to_end,
         "rows": results,
     }
     out = Path(args.out)

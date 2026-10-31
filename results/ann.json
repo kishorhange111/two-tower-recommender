@@ -1,0 +1,181 @@
+{
+  "k": 100,
+  "threads": 1,
+  "queries": 500,
+  "real_catalogue": 3678,
+  "synthetic_above_real": true,
+  "end_to_end_real_catalogue": {
+    "p50_ms": 1.3915500021539629,
+    "p99_ms": 2.956262983789202
+  },
+  "rows": [
+    {
+      "catalogue": 3678,
+      "index": "exact",
+      "build_seconds": 0.0,
+      "p50_ms": 0.09724999836180359,
+      "p99_ms": 0.39602101722266525,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 3678,
+      "index": "hnsw_m32_ef128",
+      "build_seconds": 0.4,
+      "p50_ms": 0.18855000962503254,
+      "p99_ms": 0.42378999583888793,
+      "recall@100": 0.99994
+    },
+    {
+      "catalogue": 3678,
+      "index": "hnsw_m32_ef256",
+      "build_seconds": 0.4,
+      "p50_ms": 0.4914000164717436,
+      "p99_ms": 0.8820839921827426,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 3678,
+      "index": "hnsw_m32_ef512",
+      "build_seconds": 0.4,
+      "p50_ms": 1.0441500053275377,
+      "p99_ms": 2.2991600149543956,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 3678,
+      "index": "ivf_242_probe4",
+      "build_seconds": 0.06,
+      "p50_ms": 0.019150000298395753,
+      "p99_ms": 0.1892810128629205,
+      "recall@100": 0.56688
+    },
+    {
+      "catalogue": 3678,
+      "index": "ivf_242_probe16",
+      "build_seconds": 0.06,
+      "p50_ms": 0.032800002372823656,
+      "p99_ms": 0.22722101130057107,
+      "recall@100": 0.90706
+    },
+    {
+      "catalogue": 3678,
+      "index": "ivf_242_probe64",
+      "build_seconds": 0.06,
+      "p50_ms": 0.10134998592548072,
+      "p99_ms": 0.37364099058322575,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 100000,
+      "index": "exact",
+      "build_seconds": 0.01,
+      "p50_ms": 3.68914999125991,
+      "p99_ms": 5.797153987805358,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 100000,
+      "index": "hnsw_m32_ef128",
+      "build_seconds": 24.18,
+      "p50_ms": 0.2182000025641173,
+      "p99_ms": 0.5103300139307975,
+      "recall@100": 0.96946
+    },
+    {
+      "catalogue": 100000,
+      "index": "hnsw_m32_ef256",
+      "build_seconds": 24.18,
+      "p50_ms": 0.2807500131893903,
+      "p99_ms": 0.7033060002140701,
+      "recall@100": 0.9975
+    },
+    {
+      "catalogue": 100000,
+      "index": "hnsw_m32_ef512",
+      "build_seconds": 24.18,
+      "p50_ms": 1.7643999890424311,
+      "p99_ms": 2.4944540159776802,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 100000,
+      "index": "ivf_1264_probe4",
+      "build_seconds": 3.0,
+      "p50_ms": 0.12245000107213855,
+      "p99_ms": 0.24602001038147134,
+      "recall@100": 0.62468
+    },
+    {
+      "catalogue": 100000,
+      "index": "ivf_1264_probe16",
+      "build_seconds": 3.0,
+      "p50_ms": 0.15715000336058438,
+      "p99_ms": 0.29115900455508376,
+      "recall@100": 0.9618600000000002
+    },
+    {
+      "catalogue": 100000,
+      "index": "ivf_1264_probe64",
+      "build_seconds": 3.0,
+      "p50_ms": 0.4519500071182847,
+      "p99_ms": 0.708938013704028,
+      "recall@100": 0.997
+    },
+    {
+      "catalogue": 1000000,
+      "index": "exact",
+      "build_seconds": 0.15,
+      "p50_ms": 34.72604999842588,
+      "p99_ms": 44.34598500374704,
+      "recall@100": 1.0
+    },
+    {
+      "catalogue": 1000000,
+      "index": "hnsw_m32_ef128",
+      "build_seconds": 241.96,
+      "p50_ms": 0.3182499931426719,
+      "p99_ms": 0.7563789933919902,
+      "recall@100": 0.6894600000000001
+    },
+    {
+      "catalogue": 1000000,
+      "index": "hnsw_m32_ef256",
+      "build_seconds": 241.96,
+      "p50_ms": 0.6525000062538311,
+      "p99_ms": 1.14626999682514,
+      "recall@100": 0.7524599999999999
+    },
+    {
+      "catalogue": 1000000,
+      "index": "hnsw_m32_ef512",
+      "build_seconds": 241.96,
+      "p50_ms": 1.650049991440028,
+      "p99_ms": 2.878857993346172,
+      "recall@100": 0.78146
+    },
+    {
+      "catalogue": 1000000,
+      "index": "ivf_4000_probe4",
+      "build_seconds": 31.7,
+      "p50_ms": 0.22005001665093005,
+      "p99_ms": 0.3838260119664483,
+      "recall@100": 0.8005399999999999
+    },
+    {
+      "catalogue": 1000000,
+      "index": "ivf_4000_probe16",
+      "build_seconds": 31.7,
+      "p50_ms": 0.3254999901400879,
+      "p99_ms": 0.5237340004532598,
+      "recall@100": 0.98744
+    },
+    {
+      "catalogue": 1000000,
+      "index": "ivf_4000_probe64",
+      "build_seconds": 31.7,
+      "p50_ms": 0.8762499928707257,
+      "p99_ms": 1.3614360030624082,
+      "recall@100": 0.99998
+    }
+  ]
+}
