@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "towerrec"
+version = "0.1.0"
+description = "Two-stage recommender on MovieLens 1M: two-tower retrieval, FAISS, LightGBM re-ranking, leakage-aware evaluation against strong baselines, FastAPI serving."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kishor Hange" }]
+dependencies = [
+    "numpy>=1.24,<3",
+    "pandas>=2.0,<4",
+    "scipy>=1.10,<2",
+    "torch>=2.1,<3",
+    "faiss-cpu>=1.8,<2",
+    "pyarrow>=14",
+    "lightgbm>=4.0,<5",
+    "fastapi>=0.110,<1",
+    "pydantic>=2.5,<3",
+    "uvicorn>=0.29,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "httpx>=0.27,<1"]
+
+[project.scripts]
+towerrec-eval = "towerrec.evaluate:main"
+towerrec-ann = "towerrec.ann_benchmark:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501", "B905", "SIM105", "SIM108"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
