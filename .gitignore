@@ -9,3 +9,13 @@ __pycache__/
 build/
 dist/
 artifacts/
+
+# Secrets / credentials (security hardening)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+credentials*.json
+*service-account*.json
